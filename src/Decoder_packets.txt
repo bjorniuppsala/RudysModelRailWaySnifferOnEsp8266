@@ -1,0 +1,108 @@
+
+INFO on the NCE DCC analyzer:
+http://jmri.sourceforge.net/help/en/package/jmri/jmrix/nce/analyzer/NcePacketMonitorFrame.shtml
+
+
+DCC packets for test with the DCC sniffer code:
+
+// Loc 1 Forw 21
+dccPacket[0]=3;
+dccPacket[1]=B00000001;
+dccPacket[2]=B01101100;
+dccPacket[3]=B11111111;
+
+// Loc 1902 Forw 21
+dccPacket[0]=4;
+dccPacket[1]=B11000111;
+dccPacket[2]=B01101110;
+dccPacket[3]=B01101100;
+dccPacket[4]=B11111111;
+
+// Loc 1902 Rev 14
+dccPacket[0]=4;
+dccPacket[1]=B11000111;
+dccPacket[2]=B01101110;
+dccPacket[3]=B01011000;
+dccPacket[4]=B11111111;
+
+// Loc 4 L F4-F1 10000
+dccPacket[0]=3;
+dccPacket[1]=B00000100;
+dccPacket[2]=B10010000;
+dccPacket[3]=B11111111;
+
+// Loc 4 F8-F5 1010
+dccPacket[0]=3;
+dccPacket[1]=B00000100;
+dccPacket[2]=B10111010;
+dccPacket[3]=B11111111;
+
+// Loc 4 F12-F9 1010
+dccPacket[0]=3;
+dccPacket[1]=B00000100;
+dccPacket[2]=B10101010;
+dccPacket[3]=B11111111;
+
+
+// Loc 4 F20-F13 10101010
+dccPacket[0]=4;
+dccPacket[1]=B00000100;
+dccPacket[2]=B11011110;
+dccPacket[3]=B10101010;
+dccPacket[4]=B11111111;
+
+// Loc 1902 F28-F21 10101010
+dccPacket[0]=5;
+dccPacket[1]=B11000111;
+dccPacket[2]=B01101110;
+dccPacket[3]=B11011111;
+dccPacket[4]=B10101010;
+dccPacket[5]=B11111111;
+
+// Loc 1902 For128 2
+dccPacket[0]=5;
+dccPacket[1]=B11000111;
+dccPacket[2]=B01101110;
+dccPacket[3]=B00111111;
+dccPacket[4]=B10000011;
+dccPacket[5]=B11111111;
+
+// Loc 4 BinStateLong 15 On
+dccPacket[0]=5;
+dccPacket[1]=B00000100;
+dccPacket[2]=B11000000;
+dccPacket[3]=B10001111;
+dccPacket[4]=B00000000;
+dccPacket[5]=B11111111;
+
+// Loc 4 BinStateShort 15 On
+dccPacket[0]=4;
+dccPacket[1]=B00000100;
+dccPacket[2]=B11011101;
+dccPacket[3]=B10001111;
+dccPacket[5]=B11111111;
+
+// Acc 10 3:1 1 On
+dccPacket[0]=3;
+dccPacket[1]=B10000011;
+dccPacket[2]=B11111011;
+dccPacket[3]=B11111111;
+
+// Loc 1902 CV Verify 3 128
+dccPacket[0]=6;
+dccPacket[1]=B11000111;
+dccPacket[2]=B01101110;
+dccPacket[3]=B11100100;
+dccPacket[4]=B00000011;
+dccPacket[5]=B10000000;
+dccPacket[6]=B11111111;
+
+// Loc 1782 CV Write 3 128
+dccPacket[0]=6;
+dccPacket[1]=B11000111;
+dccPacket[2]=B01101110;
+dccPacket[3]=B11101100;
+dccPacket[4]=B00000011;
+dccPacket[5]=B10000000;
+dccPacket[6]=B11111111;
+
