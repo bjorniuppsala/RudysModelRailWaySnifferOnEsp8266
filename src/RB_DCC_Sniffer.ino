@@ -22,7 +22,7 @@
 // l = show locomotive packets toggle
 //
 ////////////////////////////////////////////////////////
-
+constexpr int packetDataPin = 16;  // high between the first 0 start bit and until the last 1 end bit.
 
 byte refreshTime = 4; // Time between DCC packets buffer refreshes in s
 byte packetBufferSize = 32; // DCC packets buffer size
@@ -83,7 +83,10 @@ void checkForPreamble() {
    byte nextBit = getBit();
    if (nextBit == 1) preambleOneCount++;
    if (preambleOneCount < 10 && nextBit == 0) preambleOneCount = 0;
-   if (preambleOneCount >= 10 && nextBit == 0) preambleFound = true;
+   if (preambleOneCount >= 10 && nextBit == 0) {
+	   preambleFound = true;
+	   digitalWrite(packetDataPin, HIGH);
+   }
 }
 
 //========================
@@ -94,7 +97,10 @@ void getNextByte() {
   packetBytesCount ++;
   dccPacket[packetBytesCount] = newByte;
   dccPacket[0] = packetBytesCount;
-  if (getBit() == 1) packetEnd = true;
+  if (getBit() == 1) {
+	  packetEnd = true;
+	  digitalWrite(packetDataPin, LOW);
+  }
 }
 
 //========================
@@ -203,6 +209,8 @@ void setup() {
   Serial.println(" seconds");
   Serial.println("---");
   beginBitDetection(); //Uncomment this line when on DCC !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  pinMode(packetDataPin, OUTPUT);
+  digitalWrite(packetDataPin, LOW);
 }
 
 //====================
